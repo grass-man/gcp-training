@@ -1,0 +1,22 @@
+# CHANGE PROJECT ID BELOW OTHERWISE IT WONT WORK - STORED IN ${PROJECT_ID}
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://source.developers.google.com/p/${PROJECT_ID}/r/${PROJECT_ID}-repository']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/${PROJECT_ID}/raccoon', '.']
+  dir: 'app/python'
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/${PROJECT_ID}/weasel', '.']
+  dir: 'app/nginx'
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/${PROJECT_ID}/raccoon']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/${PROJECT_ID}/weasel']
+
+images: ['gcr.io/${PROJECT_ID}/raccoon', 'gcr.io/${PROJECT_ID}/weasel']
+
+timeout: "600s"

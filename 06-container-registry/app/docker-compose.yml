@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  raccoon:
+    image: gcr.io/filip-is-great/raccoon
+    ports:
+      - 5000:5000
+
+  weasel:
+    image: gcr.io/filip-is-great/weasel
+    ports:
+      - 80:80
+    depends_on:
+      - raccoon

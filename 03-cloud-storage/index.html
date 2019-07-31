@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300&display=swap" rel="stylesheet">
+    <title>Rascally Raccoon</title>
+    <style>
+        html, body {
+            height: 99%; display: flex;
+            background-color: #333; color: #fff;
+            font-family: 'Lato', sans-serif; font-size: 1.5em;
+            text-align: center; align-items: center; justify-content: center;
+        }
+        button {
+            margin-top: 25%; margin-left: 60%;
+            background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+            background-color:#f9f9f9;
+            border-radius:6px; border:1px solid #dcdcdc;
+            cursor:pointer; font-weight:bold;
+            padding:16px 24px; justify-content: left; font-size:0.5em;
+        }
+        button:hover {
+            background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+            background-color:#e9e9e9;
+        }
+        button:active {
+            position:relative; top:1px;
+        }
+        a {
+            text-decoration: none; color:#666;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="cover-heading">Hello from <strong style="color: #81d4fa;">Instance</strong></h1>
+        <div>
+            <button>
+                <!-- CHANGE PROJECT ID BELOW OTHERWISE IT WONT WORK STORED IN ${BUCKET_NAME} -->
+                <a href="https://storage.googleapis.com/${PROJECT_ID}-bucket/images/bucket.jpg">Get access to attachment</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

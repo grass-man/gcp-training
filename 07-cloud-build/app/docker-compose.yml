@@ -1,0 +1,15 @@
+# CHANGE PROJECT ID BELOW OTHERWISE IT WONT WORK - STORED IN ${PROJECT_ID}
+version: '3'
+services:
+
+  raccoon:
+    image: gcr.io/[PROJECT_ID]/raccoon:latest
+    ports:
+      - 5000:5000
+
+  weasel:
+    image: gcr.io/[PROJECT_ID]/weasel:latest
+    ports:
+      - 80:80
+    depends_on:
+      - raccoon
